@@ -4,7 +4,7 @@ import Education from "./components/education";
 import Projects from "./components/projects";
 import React from "react";
 
-import "./animation.css"
+import "../../styles/animation.css";
 
 interface ContentProps {
   page: string;
@@ -30,9 +30,8 @@ const Content: React.FC<ContentProps> = ({ page, language }) => {
   console.log(pageNavList)
 
   return (
-    <div className="box relative flex items-center justify-center w-[90%] h-[90%] my-10 mr-20 overflow-hidden border border-slate-400">
-      <span>
-        <div className="w-full h-full overflow-y-auto scrollbar-hide flex flex-col pl-20 pr-20 ">
+    <div className="box flex items-center justify-center w-[90%] h-[90%] my-10 mr-20 overflow-hidden">
+        <div className="content w-[99.8%] h-[99.7%] overflow-y-auto scrollbar-hide flex flex-col pl-20 pr-20 " >
           {pageNavList.map((pageNav, index) => (
             page == pageNav.pageId && (
               <div key={index} id={pageNav.id}>
@@ -41,7 +40,6 @@ const Content: React.FC<ContentProps> = ({ page, language }) => {
             )
           ))}
         </div>
-      </span>
 
     </div>
   );

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import "../../../styles/animation.css";
 
 interface NavProps {
   language: string;
@@ -33,10 +34,7 @@ const NavigationComponent: React.FC<NavProps> = () => {
       {navItems.map((item, index) => (
         <a key={index} href={item.id} onClick={() => setPage(item.id)} className="flex flex-row w-full items-center mb-3 hover:cursor-pointer hover:opacity-75">
           {page == item.id && <span className="mr-4 text-gray-200">&gt;_</span>}
-          <div className="flex flex-col items-start w-full">
-            <p className="text-gray-200">{item.text}</p>
-            {page == item.id && <div className="w-full h-[1.5px] bg-slate-400" />}
-          </div>
+          <p className="text-gray-200">{item.text}</p>
         </a>
       ))}
     </div>
