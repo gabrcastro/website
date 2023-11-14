@@ -1,14 +1,17 @@
+import { useTranslation } from "react-i18next";
 
 interface ProjectsProps {
   lang: string;
 }
 
 const Projects: React.FC<ProjectsProps> = () => {
-  // const dict = getDictionaryUseClient(lang);
+  const {t} = useTranslation();
 
   return (
     <div className=" flex text-justify mt-44 mb-32 w-full items-center justify-center">
-      <p className="text-xl text-gray-700">EM DESENVOLVIMENTO</p>
+      <p className="text-xl text-gray-700">
+        {t("projects.empty")}
+      </p>
     </div>
   );
 };

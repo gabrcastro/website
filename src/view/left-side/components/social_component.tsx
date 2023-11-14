@@ -1,4 +1,9 @@
-import {AiOutlineInstagram, AiOutlineYoutube, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
+import { AiOutlineInstagram, AiOutlineYoutube, AiOutlineGithub, AiOutlineLinkedin } from "react-icons/ai";
+
+type SocialLinks = {
+  link: string,
+  icon: React.ReactNode
+}
 
 export default function SocialComponent() {
 
@@ -7,23 +12,20 @@ export default function SocialComponent() {
   const githubLink = "https://github.com/gabrcastro";
   const linkedinLink = "https://www.linkedin.com/in/gabrielsouzacastro/";
 
-  return(
-    <div className="flex flex-row justify-between items-center">
-      <a href={instagramLink} target="_blank">
-        <AiOutlineInstagram className="w-8 h-8 mr-4 rounded-full hover:cursor-pointer hover:opacity-75"/>
-      </a>
-      
-      <a href={youtubeLink} target="_blank">
-        <AiOutlineYoutube className="w-8 h-8 mr-4  rounded-full hover:cursor-pointer hover:opacity-75"/>
-      </a>
+  const socialLinks: SocialLinks[] = [
+    {link: githubLink, icon: <AiOutlineGithub className="w-8 h-8 mr-4  rounded-full text-gray-200 hover:cursor-pointer hover:opacity-75" />}, 
+    {link: linkedinLink, icon: <AiOutlineLinkedin className="w-8 h-8 mr-4  rounded-full text-gray-200 hover:cursor-pointer hover:opacity-75"/>}, 
+    {link: youtubeLink, icon: <AiOutlineYoutube className="w-8 h-8 mr-4  rounded-full text-gray-200 hover:cursor-pointer hover:opacity-75"/>}, 
+    {link: instagramLink, icon: <AiOutlineInstagram className="w-8 h-8 mr-4  rounded-full text-gray-200 hover:cursor-pointer hover:opacity-75"/>}];
 
-      <a href={githubLink} target="_blank">
-        <AiOutlineGithub className="w-8 h-8 mr-4 rounded-full hover:cursor-pointer hover:opacity-75"/>
-      </a>
-      
-      <a href={linkedinLink} target="_blank">
-        <AiOutlineLinkedin className="w-8 h-8 rounded-full hover:cursor-pointer hover:opacity-75"/>
-      </a>
+  return (
+    <div className="flex flex-row justify-between items-center">
+
+      {socialLinks.map((socialLink, index) => (
+        <a key={index} href={socialLink.link} target="_blank">
+            {socialLink.icon}
+        </a>
+      ))}
     </div>
   );
 }
