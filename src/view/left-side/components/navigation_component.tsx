@@ -12,8 +12,8 @@ type NavPropsItem = {
 }
 
 const NavigationComponent: React.FC<NavProps> = () => {
-  const { t } = useTranslation();
 
+  const { t } = useTranslation();
 
   const pageAbout: string = "#about";
   const pageExperiences: string = "#experiences";
