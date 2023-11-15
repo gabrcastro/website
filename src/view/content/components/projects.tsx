@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 
 interface ProjectsProps {
-  lang: string;
 }
 
 const Projects: React.FC<ProjectsProps> = () => {

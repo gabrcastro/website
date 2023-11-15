@@ -4,12 +4,7 @@ import store from "../../redux/store";
 import Content from "../content/content";
 import LeftSide from "../left-side/left-side";
 
-interface HomeProps {
-  lang: string,
-}
-
-export default function Home(props: HomeProps) {
-  console.log(props)
+export default function Home() {
 
   return (
     <Provider store={store}>
@@ -18,7 +13,7 @@ export default function Home(props: HomeProps) {
           <LeftSide />
         </div>
         <div className="w-3/5">
-          <Content page="#about" language="en-US" />
+          <Content />
         </div>
       </div>
     </Provider>
