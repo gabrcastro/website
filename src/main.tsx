@@ -6,6 +6,6 @@ import './config/i18n.ts'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-      <Home lang={"en-US"} />
+      <Home />
   </React.StrictMode>,
 )

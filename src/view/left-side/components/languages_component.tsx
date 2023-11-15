@@ -1,34 +1,32 @@
 import { clsx } from "clsx";
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-interface LanguagesComponentProps {
-  language: string
-}
-
-const LanguagesComponent = (props: LanguagesComponentProps) => {
+const LanguagesComponent = () => {
   const { t, i18n} = useTranslation();
+  let currentLang = i18n.language;
+  console.log(currentLang);
 
-  useEffect(() => {
-    
-  }, [i18n])
+  function handleChangeLanguage(lang: string) {
+    i18n.changeLanguage(lang);
+    currentLang = lang;
+  }
 
   return (
     <div className="flex flex-row gap-5 ml-10">
-      <a href={`/en-US/`}
+      <button onClick={() => handleChangeLanguage("en")}
         className=" hover:opacity-50 hover:cursor-pointer"
       >
-        <span className={clsx("text-sm", props.language == "en-US" ? "text-gray-200 font-semibold" : "text-gray-500")}>
+        <span className={clsx("text-sm", currentLang == "en" ? "text-gray-200 font-semibold" : "text-gray-500")}>
           {t("header.en")}
         </span>
-      </a>
-      <a href={`/pt-BR/`}
+      </button>
+      <button onClick={() => handleChangeLanguage("pt")}
         className=" hover:opacity-50 hover:cursor-pointer"
       >
-        <span className={clsx("text-sm", props.language == "pt-BR" ? "text-gray-200 font-semibold" : "text-gray-500")}>
+        <span className={clsx("text-sm", currentLang == "pt" ? "text-gray-200 font-semibold" : "text-gray-500")}>
           {t("header.pt")}
         </span>
-      </a>
+      </button>
     </div>
   );
 }

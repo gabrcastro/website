@@ -24,12 +24,12 @@ export default function LeftSide() {
         </div>
 
         <div className="mt-10 w-full">
-          <NavigationComponent language={"en-US"} />
+          <NavigationComponent />
         </div>
 
         <div className="mt-10 flex flex-row items-center">
           <SocialComponent />
-          <LanguagesComponent language={"en-US"} />
+          <LanguagesComponent />
         </div>
       </div>
     </div>

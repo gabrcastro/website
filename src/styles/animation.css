@@ -61,4 +61,5 @@ position: relative;
   position: absolute;
   background: linear-gradient(to bottom left, #18153d, #030712, #030712, #030712);
   z-index: 1;
+  border-radius: 10px;
 }
