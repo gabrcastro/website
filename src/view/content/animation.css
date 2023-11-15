@@ -1,0 +1,36 @@
+.box::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: conic-gradient(transparent, transparent, transparent, #ffffff);
+  animation: animate 4s linear infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background-image: conic-gradient(transparent, transparent, transparent, #ffffff);
+  animation: animate 4s linear infinite;
+  animation-delay: -6s;
+}
+
+@keyframes animate {
+  0%
+  {
+    transform: rotate(0deg);
+  }
+  100%
+  {
+    transform: rotate(360deg);
+  }
+}
+
+.box span {
+  position: absolute;
+  inset: 2px;
+  background: #030712;
+  z-index: 1;
+}
